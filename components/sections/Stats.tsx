@@ -1,13 +1,13 @@
 const STATS = [
-  { n: "1.000+", l: "mulheres na comunidade" },
-  { n: "11ª", l: "edição em 2026" },
-  { n: "10", l: "edições já realizadas" },
-  { n: "2025", l: "associação formalizada" },
+  { n: "1.000+", l: "mulheres na comunidade",  accent: "var(--orange-500)" },
+  { n: "11ª",    l: "edição em 2026",           accent: "var(--coral-500)"  },
+  { n: "10",     l: "edições já realizadas",    accent: "var(--teal-400)"   },
+  { n: "2025",   l: "associação formalizada",   accent: "var(--teal-500)"   },
 ];
 
 export function Stats() {
   return (
-    <section style={{ background: "var(--ink-900)", color: "white", padding: "48px 0" }}>
+    <section style={{ background: "var(--teal-700)", padding: "56px 0" }}>
       <div
         className="stats-grid"
         style={{
@@ -16,24 +16,56 @@ export function Stats() {
           padding: "0 32px",
           display: "grid",
           gridTemplateColumns: "repeat(4, 1fr)",
-          gap: 32,
+          gap: 16,
         }}
       >
         {STATS.map((s, i) => (
           <div
             key={i}
             style={{
-              borderLeft: i > 0 ? "1px solid rgba(255,255,255,0.1)" : "none",
-              paddingLeft: i > 0 ? 32 : 0,
+              background: "rgba(255,255,255,0.06)",
+              border: "1px solid rgba(255,255,255,0.1)",
+              borderRadius: 16,
+              padding: "28px 24px 24px",
+              position: "relative",
+              overflow: "hidden",
             }}
           >
+            {/* Accent bar no topo */}
+            <div
+              aria-hidden
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                height: 3,
+                background: s.accent,
+                borderRadius: "16px 16px 0 0",
+              }}
+            />
+
             <div
               className="display"
-              style={{ fontSize: "clamp(36px, 4vw, 52px)", color: "var(--coral-400)", marginBottom: 4 }}
+              style={{
+                fontSize: "clamp(36px, 3.5vw, 52px)",
+                color: "white",
+                marginBottom: 8,
+                lineHeight: 1,
+              }}
             >
               {s.n}
             </div>
-            <div style={{ fontSize: 13, color: "rgba(255,255,255,0.65)", letterSpacing: "0.02em" }}>
+            <div
+              style={{
+                fontSize: 13,
+                color: s.accent,
+                fontWeight: 700,
+                letterSpacing: "0.04em",
+                textTransform: "uppercase",
+                fontFamily: "var(--font-mono)",
+              }}
+            >
               {s.l}
             </div>
           </div>
@@ -43,7 +75,6 @@ export function Stats() {
       <style>{`
         @media (max-width: 700px) {
           .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
-          .stats-grid > div { border-left: none !important; padding-left: 0 !important; }
         }
       `}</style>
     </section>
