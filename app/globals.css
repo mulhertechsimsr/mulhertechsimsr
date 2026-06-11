@@ -1,0 +1,278 @@
+@import "tailwindcss";
+
+/* ===== MULHER TECH SIM SENHOR — Design Tokens ===== */
+
+@theme inline {
+  /* Brand colors */
+  --color-coral-500: #F0844A;
+  --color-coral-400: #F4A06D;
+  --color-coral-300: #F8C29A;
+
+  --color-teal-700: #0D5C57;
+  --color-teal-600: #0F7570;
+  --color-teal-500: #14998A;
+  --color-teal-400: #5DBFB5;
+
+  --color-pink-500: #E2487A;
+  --color-pink-400: #EB6E96;
+
+  --color-cream-50:  #FFFFFF;
+  --color-cream-100: #F4F7F6;
+  --color-cream-200: #E2EBE9;
+
+  --color-ink-900: #0F2A28;
+  --color-ink-700: #2E4F4B;
+  --color-ink-500: #5E7B77;
+  --color-ink-300: #A6BAB7;
+
+  /* Typography — injected from next/font via CSS vars on <html> */
+  --font-display: var(--font-bricolage), "Times New Roman", serif;
+  --font-body:    var(--font-manrope), system-ui, sans-serif;
+  --font-mono:    var(--font-jetbrains), "Courier New", monospace;
+}
+
+/* CSS custom properties — accessible in inline styles & arbitrary Tailwind values */
+:root {
+  --coral-500: #F0844A;
+  --coral-400: #F4A06D;
+  --coral-300: #F8C29A;
+
+  --teal-700: #0D5C57;
+  --teal-600: #0F7570;
+  --teal-500: #14998A;
+  --teal-400: #5DBFB5;
+
+  --pink-500: #E2487A;
+  --pink-400: #EB6E96;
+
+  --cream-50:  #FFFFFF;
+  --cream-100: #F4F7F6;
+  --cream-200: #E2EBE9;
+
+  --ink-900: #0F2A28;
+  --ink-700: #2E4F4B;
+  --ink-500: #5E7B77;
+  --ink-300: #A6BAB7;
+}
+
+/* ===== Base ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink-900);
+  background: var(--cream-50);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ===== Display / Eyebrow typography ===== */
+.display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* ===== Animations ===== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 40s linear infinite;
+}
+
+/* ===== Button primitives ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-coral {
+  background: var(--coral-500);
+  color: white;
+  box-shadow: 0 4px 0 var(--coral-400), 0 8px 24px -8px var(--coral-500);
+}
+
+.btn-coral:hover {
+  box-shadow: 0 6px 0 var(--coral-400), 0 12px 28px -8px var(--coral-500);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--ink-900);
+  border: 1.5px solid var(--ink-900);
+}
+
+.btn-outline-light {
+  background: transparent;
+  color: white;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink-700);
+  padding: 10px 16px;
+  font-weight: 600;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.15s;
+  text-decoration: none;
+}
+
+/* ===== Form fields ===== */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-700);
+}
+
+.field input,
+.field select,
+.field textarea {
+  font-family: var(--font-body);
+  font-size: 15px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1.5px solid var(--cream-200);
+  background: white;
+  color: var(--ink-900);
+  transition: border-color 0.15s, box-shadow 0.15s;
+  outline: none;
+  width: 100%;
+  appearance: none;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--coral-500);
+  box-shadow: 0 0 0 4px rgba(240, 132, 74, 0.12);
+}
+
+.field-dark label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.field-dark input,
+.field-dark select,
+.field-dark textarea {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.field-dark input::placeholder,
+.field-dark textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ===== Image placeholder ===== */
+.img-placeholder {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--cream-100),
+    var(--cream-100) 8px,
+    var(--cream-200) 8px,
+    var(--cream-200) 16px
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-500);
+  text-align: center;
+  padding: 12px;
+}
+
+.img-placeholder-dark {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.04) 8px,
+    rgba(255, 255, 255, 0.08) 8px,
+    rgba(255, 255, 255, 0.08) 16px
+  );
+  color: rgba(255, 255, 255, 0.5);
+}
