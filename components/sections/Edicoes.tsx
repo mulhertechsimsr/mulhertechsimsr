@@ -76,25 +76,24 @@ export function Edicoes() {
                 style={{
                   background: "white",
                   borderRadius: 20,
-                  border: e.current ? "2px solid var(--coral-500)" : "1px solid var(--cream-200)",
+                  border: e.current ? "2px solid #F0844A" : "1px solid var(--cream-200)",
                   overflow: "hidden",
                   cursor: e.current ? "pointer" : "default",
                   display: "block",
                   textDecoration: "none",
                   transition: e.current ? "transform 0.2s, box-shadow 0.2s" : undefined,
-                  boxShadow: e.current ? "0 8px 32px -8px rgba(226,72,122,0.28)" : undefined,
-                  gridColumn: e.current ? "span 2" : undefined,
+                  boxShadow: e.current ? "0 8px 32px -8px rgba(240,132,74,0.30)" : undefined,
                 }}
                 onMouseEnter={(ev: React.MouseEvent<HTMLElement>) => {
                   if (e.current) {
                     (ev.currentTarget as HTMLElement).style.transform = "translateY(-3px)";
-                    (ev.currentTarget as HTMLElement).style.boxShadow = "0 16px 48px -12px rgba(226,72,122,0.38)";
+                    (ev.currentTarget as HTMLElement).style.boxShadow = "0 16px 48px -12px rgba(240,132,74,0.42)";
                   }
                 }}
                 onMouseLeave={(ev: React.MouseEvent<HTMLElement>) => {
                   if (e.current) {
                     (ev.currentTarget as HTMLElement).style.transform = "translateY(0)";
-                    (ev.currentTarget as HTMLElement).style.boxShadow = "0 8px 32px -8px rgba(226,72,122,0.28)";
+                    (ev.currentTarget as HTMLElement).style.boxShadow = "0 8px 32px -8px rgba(240,132,74,0.30)";
                   }
                 }}
               >
@@ -102,7 +101,7 @@ export function Edicoes() {
                 <div
                   style={{
                     position: "relative",
-                    height: e.current ? 300 : 240,
+                    height: 240,
                     background: `linear-gradient(135deg, ${e.color}, rgba(0,0,0,0.2))`,
                     overflow: "hidden",
                   }}
