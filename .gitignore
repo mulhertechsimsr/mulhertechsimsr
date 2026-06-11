@@ -2,9 +2,10 @@
 node_modules/
 package-lock.json
 
-# === Next.js build ===
+# === Next.js / OpenNext build output ===
 .next/
 out/
+.open-next/
 
 # === Build / cache ===
 .turbo/
