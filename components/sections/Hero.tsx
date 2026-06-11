@@ -87,25 +87,35 @@ export function Hero() {
             className="display hero-title"
             style={{
               fontSize: "clamp(48px, 7vw, 92px)",
-              lineHeight: 0.92,
+              lineHeight: 1.05,
               color: "var(--ink-900)",
               marginBottom: 28,
             }}
           >
-            Mulher Tech,
+            Mulher{" "}
+            <span
+              style={{
+                fontStyle: "italic",
+                color: "var(--teal-600)",
+                display: "inline-block",
+                paddingBottom: "0.08em",
+                textDecoration: "underline",
+                textDecorationStyle: "wavy",
+                textDecorationColor: "var(--teal-400)",
+                textUnderlineOffset: "0.18em",
+              }}
+            >
+              Tech
+            </span>
             <br />
             <span style={{ color: "var(--coral-500)" }}>sim </span>
             <span
               style={{
                 fontStyle: "italic",
                 color: "var(--teal-600)",
-                textDecoration: "underline",
-                textDecorationStyle: "wavy",
-                textDecorationColor: "var(--teal-400)",
-                textUnderlineOffset: 12,
               }}
             >
-              senhor.
+              senhor
             </span>
           </h1>
 
@@ -254,7 +264,7 @@ export function Hero() {
                 COMUNIDADE ATIVA
               </div>
               <div style={{ fontSize: 14, fontWeight: 700, color: "var(--ink-900)" }}>
-                1.000+ membras
+                1.000+ mulheres
               </div>
             </div>
           </div>

@@ -5,7 +5,7 @@ const PILLARS = [
     pill: "01 · CONEXÃO",
     icon: "◉",
     color: "var(--coral-500)",
-    title: "Onde mulheres em tech se encontram",
+    title: "Onde mulheres de tech se encontram",
     desc: "Promovemos a interação entre mulheres da área criando espaços seguros de troca — porque carreira em tecnologia se faz em rede, e nenhuma rede se sustenta sozinha.",
   },
   {
