@@ -76,25 +76,33 @@ export function Edicoes() {
                 style={{
                   background: "white",
                   borderRadius: 20,
-                  border: "1px solid var(--cream-200)",
+                  border: e.current ? "2px solid var(--coral-500)" : "1px solid var(--cream-200)",
                   overflow: "hidden",
                   cursor: e.current ? "pointer" : "default",
                   display: "block",
                   textDecoration: "none",
-                  transition: e.current ? "transform 0.2s" : undefined,
+                  transition: e.current ? "transform 0.2s, box-shadow 0.2s" : undefined,
+                  boxShadow: e.current ? "0 8px 32px -8px rgba(226,72,122,0.28)" : undefined,
+                  gridColumn: e.current ? "span 2" : undefined,
                 }}
                 onMouseEnter={(ev: React.MouseEvent<HTMLElement>) => {
-                  if (e.current) (ev.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
+                  if (e.current) {
+                    (ev.currentTarget as HTMLElement).style.transform = "translateY(-3px)";
+                    (ev.currentTarget as HTMLElement).style.boxShadow = "0 16px 48px -12px rgba(226,72,122,0.38)";
+                  }
                 }}
                 onMouseLeave={(ev: React.MouseEvent<HTMLElement>) => {
-                  if (e.current) (ev.currentTarget as HTMLElement).style.transform = "translateY(0)";
+                  if (e.current) {
+                    (ev.currentTarget as HTMLElement).style.transform = "translateY(0)";
+                    (ev.currentTarget as HTMLElement).style.boxShadow = "0 8px 32px -8px rgba(226,72,122,0.28)";
+                  }
                 }}
               >
                 {/* Image area */}
                 <div
                   style={{
                     position: "relative",
-                    height: 240,
+                    height: e.current ? 300 : 240,
                     background: `linear-gradient(135deg, ${e.color}, rgba(0,0,0,0.2))`,
                     overflow: "hidden",
                   }}
