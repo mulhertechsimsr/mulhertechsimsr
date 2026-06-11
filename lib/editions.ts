@@ -8,7 +8,7 @@ export type Edition = {
 };
 
 export const EDITIONS: Edition[] = [
-  { n: "11ª", year: "2026", theme: "Dados",                    color: "var(--orange-500)", current: true },
+  { n: "11ª", year: "2026", theme: "Dados",                    color: "var(--orange-500)", current: true, photo: "/edicoes/2026.png" },
   { n: "10ª", year: "2025", theme: "10 anos",                  color: "var(--teal-600)",  photo: "/edicoes/2025.png" },
   { n: "9ª",  year: "2024", theme: "Inteligência Artificial",  color: "var(--pink-500)",  photo: "/edicoes/2024.png" },
   { n: "8ª",  year: "2023", theme: "Arte e Tecnologia",        color: "var(--yellow-500)", photo: "/edicoes/2023.png"  },
