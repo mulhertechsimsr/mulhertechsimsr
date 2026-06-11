@@ -1,18 +1,72 @@
+"use client";
+
+import Image from "next/image";
+import { useState } from "react";
 import { SectionHeader } from "@/components/SectionHeader";
 
-// TODO: replace with real names, roles, and photos from the board
+// TODO: adicione as fotos em public/equipe/ com os nomes abaixo
+// Formatos aceitos: .jpg, .jpeg, .png ou .webp
 const TEAM = [
-  { role: "Presidência", name: "[ Nome ]", highlight: true },
-  { role: "Vice-Presidência", name: "[ Nome ]", highlight: false },
-  { role: "1ª Secretaria", name: "[ Nome ]", highlight: false },
-  { role: "2ª Secretaria", name: "[ Nome ]", highlight: false },
-  { role: "Tesouraria", name: "[ Nome ]", highlight: false },
-  { role: "Diretoria", name: "[ Nome ]", highlight: false },
-  { role: "Diretoria", name: "[ Nome ]", highlight: false },
-  { role: "Diretoria", name: "[ Nome ]", highlight: false },
-  { role: "Diretoria", name: "[ Nome ]", highlight: false },
-  { role: "Diretoria", name: "[ Nome ]", highlight: false },
+  { role: "Presidência",    name: "Vanessa Dantas",    photo: "/equipe/vanessa-dantas.jpg",    highlight: true  },
+  { role: "Vice-Presidência", name: "Nicoly Almeida",  photo: "/equipe/nicoly-almeida.jpg",    highlight: false },
+  { role: "1ª Secretaria",  name: "Cleonice Celestino",photo: "/equipe/cleonice-celestino.jpg",highlight: false },
+  { role: "2ª Secretaria",  name: "Laryssa Farias",    photo: "/equipe/laryssa-farias.jpg",    highlight: false },
+  { role: "Tesouraria",     name: "Mariana Linhares",  photo: "/equipe/mariana-linhares.jpg",  highlight: false },
+  { role: "Diretoria",      name: "Julyana Alencar",   photo: "/equipe/julyana-alencar.jpg",   highlight: false },
+  { role: "Diretoria",      name: "Sáskya Gurgel",     photo: "/equipe/saskya-gurgel.jpg",     highlight: false },
+  { role: "Diretoria",      name: "Raissa Melo",       photo: "/equipe/raissa-melo.jpg",       highlight: false },
+  { role: "Diretoria",      name: "Liliane",            photo: "/equipe/liliane.jpg",           highlight: false },
+  { role: "Diretoria",      name: "Bianca Melo",       photo: "/equipe/bianca-melo.jpg",       highlight: false },
 ];
+
+function MemberPhoto({
+  src,
+  name,
+  highlight,
+}: {
+  src: string;
+  name: string;
+  highlight: boolean;
+}) {
+  const [error, setError] = useState(false);
+
+  if (error) {
+    return (
+      <div
+        className="img-placeholder img-placeholder-dark"
+        style={{
+          height: 160,
+          borderRadius: 12,
+          marginBottom: 16,
+          background: highlight ? "rgba(255,255,255,0.18)" : undefined,
+        }}
+      >
+        foto
+      </div>
+    );
+  }
+
+  return (
+    <div
+      style={{
+        position: "relative",
+        height: 160,
+        borderRadius: 12,
+        marginBottom: 16,
+        overflow: "hidden",
+      }}
+    >
+      <Image
+        src={src}
+        alt={name}
+        fill
+        style={{ objectFit: "cover", objectPosition: "center top" }}
+        onError={() => setError(true)}
+        sizes="(max-width: 600px) 50vw, (max-width: 1100px) 25vw, 20vw"
+      />
+    </div>
+  );
+}
 
 export function Equipe() {
   return (
@@ -79,18 +133,7 @@ export function Equipe() {
                 transition: "transform 0.2s",
               }}
             >
-              {/* Photo placeholder — TODO: replace with next/image */}
-              <div
-                className={"img-placeholder img-placeholder-dark"}
-                style={{
-                  height: 160,
-                  borderRadius: 12,
-                  marginBottom: 16,
-                  background: t.highlight ? "rgba(255,255,255,0.18)" : undefined,
-                }}
-              >
-                foto
-              </div>
+              <MemberPhoto src={t.photo} name={t.name} highlight={t.highlight} />
               <div
                 className="eyebrow"
                 style={{
