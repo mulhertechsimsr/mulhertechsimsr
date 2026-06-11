@@ -2,7 +2,7 @@ const STATS = [
   { n: "1.000+", l: "mulheres na comunidade",  accent: "var(--orange-500)" },
   { n: "11ª",    l: "edição em 2026",           accent: "var(--coral-500)"  },
   { n: "10",     l: "edições já realizadas",    accent: "var(--teal-400)"   },
-  { n: "2025",   l: "associação formalizada",   accent: "var(--teal-500)"   },
+  { n: "2025",   l: "associação formalizada",   accent: "var(--yellow-500)" },
 ];
 
 export function Stats() {
