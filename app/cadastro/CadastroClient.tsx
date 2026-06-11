@@ -177,6 +177,23 @@ function Formulario({ onSuccess }: { onSuccess: (nome: string) => void }) {
     setForm((prev) => ({ ...prev, [key]: value }));
   };
 
+  const REQUIRED_STRINGS: (keyof FormData)[] = [
+    "nome", "apelido", "email", "whatsapp", "cpf", "dataNascimento",
+    "cidade", "estado", "faixaEtaria",
+    "racaCor", "identidadeGenero", "pcd",
+    "escolaridade", "areaFormacao",
+    "momento", "anosExperiencia", "area", "areaAtuacao",
+    "situacaoProfissional", "empresa", "modalidade", "faixaSalarial",
+    "redes", "comoConheceu", "participouEdicao", "mentoria", "expectativas",
+    "senha", "senhaConfirm",
+  ];
+
+  const isValid =
+    REQUIRED_STRINGS.every((k) => (form[k] as string).trim() !== "") &&
+    form.conduta &&
+    form.senha.length >= 8 &&
+    form.senha === form.senhaConfirm;
+
   return (
     <div>
       <div style={{ maxWidth: 680, marginBottom: 44 }}>
@@ -215,12 +232,12 @@ function Formulario({ onSuccess }: { onSuccess: (nome: string) => void }) {
                 <input id="whatsapp" required placeholder="(83) 99999-9999" value={form.whatsapp} onChange={set("whatsapp")} />
               </div>
               <div className="field">
-                <label htmlFor="cpf">CPF</label>
-                <input id="cpf" placeholder="000.000.000-00" value={form.cpf} onChange={set("cpf")} />
+                <label htmlFor="cpf">CPF *</label>
+                <input id="cpf" required placeholder="000.000.000-00" value={form.cpf} onChange={set("cpf")} />
               </div>
               <div className="field">
-                <label htmlFor="dataNascimento">Data de nascimento</label>
-                <input id="dataNascimento" type="date" value={form.dataNascimento} onChange={set("dataNascimento")} />
+                <label htmlFor="dataNascimento">Data de nascimento *</label>
+                <input id="dataNascimento" required type="date" value={form.dataNascimento} onChange={set("dataNascimento")} />
               </div>
               <div className="field">
                 <label htmlFor="cidade">Cidade *</label>
@@ -234,14 +251,15 @@ function Formulario({ onSuccess }: { onSuccess: (nome: string) => void }) {
                 </select>
               </div>
               <div className="field">
-                <label htmlFor="faixaEtaria">Faixa etária</label>
-                <select id="faixaEtaria" value={form.faixaEtaria} onChange={set("faixaEtaria")}>
-                  <option value="">Prefiro não informar</option>
+                <label htmlFor="faixaEtaria">Faixa etária *</label>
+                <select id="faixaEtaria" required value={form.faixaEtaria} onChange={set("faixaEtaria")}>
+                  <option value="">Selecione...</option>
                   <option>Até 17</option>
                   <option>18 a 24</option>
                   <option>25 a 34</option>
                   <option>35 a 44</option>
                   <option>45+</option>
+                  <option value="Prefiro não informar">Prefiro não informar</option>
                 </select>
               </div>
             </div>
@@ -254,36 +272,39 @@ function Formulario({ onSuccess }: { onSuccess: (nome: string) => void }) {
             <Notice>Campos opcionais. Usados apenas para fins estatísticos e nunca divulgados individualmente.</Notice>
             <div className="form-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
               <div className="field">
-                <label htmlFor="racaCor">Raça / Cor</label>
-                <select id="racaCor" value={form.racaCor} onChange={set("racaCor")}>
-                  <option value="">Prefiro não informar</option>
+                <label htmlFor="racaCor">Raça / Cor *</label>
+                <select id="racaCor" required value={form.racaCor} onChange={set("racaCor")}>
+                  <option value="">Selecione...</option>
                   <option>Branca</option>
                   <option>Preta</option>
                   <option>Parda</option>
                   <option>Amarela</option>
                   <option>Indígena</option>
+                  <option value="Prefiro não informar">Prefiro não informar</option>
                 </select>
               </div>
               <div className="field">
-                <label htmlFor="identidadeGenero">Identidade de gênero</label>
-                <select id="identidadeGenero" value={form.identidadeGenero} onChange={set("identidadeGenero")}>
-                  <option value="">Prefiro não informar</option>
+                <label htmlFor="identidadeGenero">Identidade de gênero *</label>
+                <select id="identidadeGenero" required value={form.identidadeGenero} onChange={set("identidadeGenero")}>
+                  <option value="">Selecione...</option>
                   <option>Mulher cisgênero</option>
                   <option>Mulher transgênero</option>
                   <option>Não-binária</option>
                   <option>Outra</option>
+                  <option value="Prefiro não informar">Prefiro não informar</option>
                 </select>
               </div>
               <div className="field">
-                <label htmlFor="pcd">Pessoa com deficiência (PcD)</label>
-                <select id="pcd" value={form.pcd} onChange={set("pcd")}>
-                  <option value="">Prefiro não informar</option>
+                <label htmlFor="pcd">Pessoa com deficiência (PcD) *</label>
+                <select id="pcd" required value={form.pcd} onChange={set("pcd")}>
+                  <option value="">Selecione...</option>
                   <option>Não</option>
                   <option>Sim, deficiência física</option>
                   <option>Sim, deficiência visual</option>
                   <option>Sim, deficiência auditiva</option>
                   <option>Sim, deficiência intelectual</option>
                   <option>Sim, outra</option>
+                  <option value="Prefiro não informar">Prefiro não informar</option>
                 </select>
               </div>
             </div>
@@ -295,8 +316,8 @@ function Formulario({ onSuccess }: { onSuccess: (nome: string) => void }) {
           <FormSection title="Formação" n="03">
             <div className="form-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
               <div className="field">
-                <label htmlFor="escolaridade">Escolaridade</label>
-                <select id="escolaridade" value={form.escolaridade} onChange={set("escolaridade")}>
+                <label htmlFor="escolaridade">Escolaridade *</label>
+                <select id="escolaridade" required value={form.escolaridade} onChange={set("escolaridade")}>
                   <option value="">Selecione...</option>
                   <option>Ensino médio incompleto</option>
                   <option>Ensino médio completo</option>
@@ -308,8 +329,8 @@ function Formulario({ onSuccess }: { onSuccess: (nome: string) => void }) {
                 </select>
               </div>
               <div className="field">
-                <label htmlFor="areaFormacao">Área de formação</label>
-                <select id="areaFormacao" value={form.areaFormacao} onChange={set("areaFormacao")}>
+                <label htmlFor="areaFormacao">Área de formação *</label>
+                <select id="areaFormacao" required value={form.areaFormacao} onChange={set("areaFormacao")}>
                   <option value="">Selecione...</option>
                   <option>Tecnologia da Informação</option>
                   <option>Ciência da Computação</option>
@@ -344,8 +365,8 @@ function Formulario({ onSuccess }: { onSuccess: (nome: string) => void }) {
                 </select>
               </div>
               <div className="field">
-                <label htmlFor="anosExperiencia">Anos de experiência em tech</label>
-                <select id="anosExperiencia" value={form.anosExperiencia} onChange={set("anosExperiencia")}>
+                <label htmlFor="anosExperiencia">Anos de experiência em tech *</label>
+                <select id="anosExperiencia" required value={form.anosExperiencia} onChange={set("anosExperiencia")}>
                   <option value="">Selecione...</option>
                   <option>Menos de 1 ano</option>
                   <option>1 a 2 anos</option>
@@ -369,8 +390,8 @@ function Formulario({ onSuccess }: { onSuccess: (nome: string) => void }) {
                 </select>
               </div>
               <div className="field">
-                <label htmlFor="areaAtuacao">Área de atuação atual</label>
-                <select id="areaAtuacao" value={form.areaAtuacao} onChange={set("areaAtuacao")}>
+                <label htmlFor="areaAtuacao">Área de atuação atual *</label>
+                <select id="areaAtuacao" required value={form.areaAtuacao} onChange={set("areaAtuacao")}>
                   <option value="">Selecione...</option>
                   <option>Engenharia de Software / Dev</option>
                   <option>Dados / Analytics</option>
@@ -410,12 +431,12 @@ function Formulario({ onSuccess }: { onSuccess: (nome: string) => void }) {
                 </select>
               </div>
               <div className="field" style={{ gridColumn: "1 / -1" }}>
-                <label htmlFor="empresa">Empresa / Instituição onde trabalha</label>
-                <input id="empresa" placeholder="Nome da empresa ou organização (opcional)" value={form.empresa} onChange={set("empresa")} />
+                <label htmlFor="empresa">Empresa / Instituição onde trabalha *</label>
+                <input id="empresa" required placeholder="Nome da empresa, organização ou 'Não se aplica'" value={form.empresa} onChange={set("empresa")} />
               </div>
               <div className="field">
-                <label htmlFor="modalidade">Modalidade de trabalho</label>
-                <select id="modalidade" value={form.modalidade} onChange={set("modalidade")}>
+                <label htmlFor="modalidade">Modalidade de trabalho *</label>
+                <select id="modalidade" required value={form.modalidade} onChange={set("modalidade")}>
                   <option value="">Selecione...</option>
                   <option>Remoto (100%)</option>
                   <option>Híbrido</option>
@@ -424,9 +445,9 @@ function Formulario({ onSuccess }: { onSuccess: (nome: string) => void }) {
                 </select>
               </div>
               <div className="field">
-                <label htmlFor="faixaSalarial">Faixa salarial mensal (bruta)</label>
-                <select id="faixaSalarial" value={form.faixaSalarial} onChange={set("faixaSalarial")}>
-                  <option value="">Prefiro não informar</option>
+                <label htmlFor="faixaSalarial">Faixa salarial mensal (bruta) *</label>
+                <select id="faixaSalarial" required value={form.faixaSalarial} onChange={set("faixaSalarial")}>
+                  <option value="">Selecione...</option>
                   <option>Até R$ 2.000</option>
                   <option>R$ 2.001 a R$ 4.000</option>
                   <option>R$ 4.001 a R$ 6.000</option>
@@ -434,6 +455,7 @@ function Formulario({ onSuccess }: { onSuccess: (nome: string) => void }) {
                   <option>R$ 10.001 a R$ 15.000</option>
                   <option>R$ 15.001 a R$ 20.000</option>
                   <option>Acima de R$ 20.000</option>
+                  <option value="Prefiro não informar">Prefiro não informar</option>
                 </select>
               </div>
             </div>
@@ -446,12 +468,12 @@ function Formulario({ onSuccess }: { onSuccess: (nome: string) => void }) {
             <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
               <div className="form-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
                 <div className="field">
-                  <label htmlFor="redes">LinkedIn ou Instagram</label>
-                  <input id="redes" placeholder="@seuusuario ou URL" value={form.redes} onChange={set("redes")} />
+                  <label htmlFor="redes">LinkedIn ou Instagram *</label>
+                  <input id="redes" required placeholder="@seuusuario ou URL" value={form.redes} onChange={set("redes")} />
                 </div>
                 <div className="field">
-                  <label htmlFor="comoConheceu">Como você conheceu o MTSS?</label>
-                  <select id="comoConheceu" value={form.comoConheceu} onChange={set("comoConheceu")}>
+                  <label htmlFor="comoConheceu">Como você conheceu o MTSS? *</label>
+                  <select id="comoConheceu" required value={form.comoConheceu} onChange={set("comoConheceu")}>
                     <option value="">Selecione...</option>
                     <option>Indicação de uma amiga</option>
                     <option>Instagram</option>
@@ -462,8 +484,8 @@ function Formulario({ onSuccess }: { onSuccess: (nome: string) => void }) {
                   </select>
                 </div>
                 <div className="field">
-                  <label htmlFor="participouEdicao">Já participou de alguma edição?</label>
-                  <select id="participouEdicao" value={form.participouEdicao} onChange={set("participouEdicao")}>
+                  <label htmlFor="participouEdicao">Já participou de alguma edição? *</label>
+                  <select id="participouEdicao" required value={form.participouEdicao} onChange={set("participouEdicao")}>
                     <option value="">Selecione...</option>
                     <option>Não, esta será minha primeira</option>
                     <option>Sim, 1 edição</option>
@@ -472,8 +494,8 @@ function Formulario({ onSuccess }: { onSuccess: (nome: string) => void }) {
                   </select>
                 </div>
                 <div className="field">
-                  <label htmlFor="mentoria">Disponibilidade para mentoria</label>
-                  <select id="mentoria" value={form.mentoria} onChange={set("mentoria")}>
+                  <label htmlFor="mentoria">Disponibilidade para mentoria *</label>
+                  <select id="mentoria" required value={form.mentoria} onChange={set("mentoria")}>
                     <option value="">Selecione...</option>
                     <option>Quero ser mentorada</option>
                     <option>Quero ser mentora</option>
@@ -484,9 +506,10 @@ function Formulario({ onSuccess }: { onSuccess: (nome: string) => void }) {
               </div>
 
               <div className="field">
-                <label htmlFor="expectativas">O que você espera da comunidade? (opcional)</label>
+                <label htmlFor="expectativas">O que você espera da comunidade? *</label>
                 <textarea
                   id="expectativas"
+                  required
                   rows={3}
                   placeholder="Networking, mentoria, aprender, ensinar, fazer amigas, oportunidades..."
                   value={form.expectativas}
@@ -557,8 +580,8 @@ function Formulario({ onSuccess }: { onSuccess: (nome: string) => void }) {
             <Link href="/#participante" className="btn btn-ghost">
               <span aria-hidden>←</span> Voltar
             </Link>
-            <button type="submit" disabled={loading} className="btn btn-coral"
-              style={{ fontSize: 16, padding: "16px 28px", opacity: loading ? 0.7 : 1 }}>
+            <button type="submit" disabled={loading || !isValid} className="btn btn-coral"
+              style={{ fontSize: 16, padding: "16px 28px", opacity: loading || !isValid ? 0.45 : 1, cursor: !isValid ? "not-allowed" : undefined }}>
               {loading ? "Criando sua conta…" : "Concluir cadastro"}
               {!loading && <span aria-hidden>→</span>}
             </button>
