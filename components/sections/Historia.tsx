@@ -3,13 +3,14 @@ import { SectionHeader } from "@/components/SectionHeader";
 // TODO: replace [ano] with the actual year of the first edition
 const MILESTONES = [
   {
-    year: "[ano]",
+    year: "2016",
     title: "A primeira edição",
-    desc: "O Mulher Tech Sim Senhor nasce como evento em João Pessoa, reunindo mulheres da tecnologia da Paraíba. (Preencha o ano da 1ª edição.)",
+    desc: "O Mulher Tech Sim Senhor nasce como evento em João Pessoa, reunindo mulheres da tecnologia da Paraíba.",
   },
   {
-    year: "[ano]",
-    title: "+1.000 mulheres",
+    year: "2020",
+    title: "Pandemia e expansão digital",
+    subtitle: "Evento 100% online · Covid-19",
     desc: "A comunidade cresce e ultrapassa mil mulheres conectadas — trocas, mentorias e cursos ao longo do ano.",
   },
   {
@@ -100,6 +101,23 @@ export function Historia() {
                   <h3 style={{ fontSize: 20, fontWeight: 700, color: "var(--ink-900)" }}>
                     {m.title}
                   </h3>
+                  {"subtitle" in m && (
+                    <span
+                      style={{
+                        fontFamily: "var(--font-mono)",
+                        fontSize: 11,
+                        letterSpacing: "0.1em",
+                        textTransform: "uppercase",
+                        color: "var(--teal-600)",
+                        background: "var(--cream-200)",
+                        padding: "3px 10px",
+                        borderRadius: 999,
+                        whiteSpace: "nowrap",
+                      }}
+                    >
+                      {(m as typeof m & { subtitle: string }).subtitle}
+                    </span>
+                  )}
                 </div>
                 <p
                   style={{
