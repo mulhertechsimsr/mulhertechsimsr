@@ -10,8 +10,7 @@ const MILESTONES = [
   {
     year: "2020",
     title: "Pandemia e expansão digital",
-    subtitle: "Evento 100% online · Covid-19",
-    desc: "A comunidade cresce e ultrapassa mil mulheres conectadas — trocas, mentorias e cursos ao longo do ano.",
+    desc: "Com a pandemia de Covid-19, o evento migrou para o digital — e a comunidade não parou. Mais de mil mulheres seguiram conectadas por trocas, mentorias e cursos ao longo do ano.",
   },
   {
     year: "2025",
@@ -101,23 +100,6 @@ export function Historia() {
                   <h3 style={{ fontSize: 20, fontWeight: 700, color: "var(--ink-900)" }}>
                     {m.title}
                   </h3>
-                  {"subtitle" in m && (
-                    <span
-                      style={{
-                        fontFamily: "var(--font-mono)",
-                        fontSize: 11,
-                        letterSpacing: "0.1em",
-                        textTransform: "uppercase",
-                        color: "var(--teal-600)",
-                        background: "var(--cream-200)",
-                        padding: "3px 10px",
-                        borderRadius: 999,
-                        whiteSpace: "nowrap",
-                      }}
-                    >
-                      {(m as typeof m & { subtitle: string }).subtitle}
-                    </span>
-                  )}
                 </div>
                 <p
                   style={{
