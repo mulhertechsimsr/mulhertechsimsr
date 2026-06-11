@@ -63,15 +63,15 @@ export function Wordmark({ dark = false, chip = false }: WordmarkProps) {
         </span>
         <span
           style={{
-            fontFamily: "var(--font-mono)",
-            fontSize: 10,
-            letterSpacing: "0.18em",
-            textTransform: "uppercase",
-            color: dark ? "rgba(255,255,255,0.6)" : "var(--ink-500)",
-            marginTop: 4,
+            fontFamily: "var(--font-display)",
+            fontSize: 13,
+            fontWeight: 700,
+            letterSpacing: "-0.01em",
+            color: dark ? "rgba(255,255,255,0.7)" : "var(--coral-500)",
+            marginTop: 3,
           }}
         >
-          Sim Senhor · Associação
+          Sim Senhor
         </span>
       </div>
     </div>

@@ -12,6 +12,7 @@ const NAV_LINKS = [
   { href: "/#edicoes", label: "Edições" },
   { href: "/#equipe", label: "Equipe" },
   { href: "/#contato", label: "Contato" },
+  { href: "/membro", label: "Área de associadas" },
 ];
 
 export function Nav() {

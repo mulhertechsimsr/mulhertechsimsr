@@ -5,3 +5,7 @@ export const EDICAO_URL =
 // TODO: replace with the real WhatsApp community invite link
 export const WHATSAPP_URL =
   process.env.NEXT_PUBLIC_WHATSAPP_URL ?? "https://chat.whatsapp.com/";
+
+// Base URL of the backend API (separate repository)
+export const API_URL =
+  process.env.NEXT_PUBLIC_API_URL ?? "https://api.mulhertechsimsenhor.org";
