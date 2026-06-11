@@ -88,11 +88,10 @@ export function Hero() {
             style={{
               fontSize: "clamp(48px, 7vw, 92px)",
               lineHeight: 1.05,
-              color: "var(--ink-900)",
               marginBottom: 28,
             }}
           >
-            Mulher{" "}
+            <span style={{ color: "var(--teal-700)" }}>Mulher</span>{" "}
             <span
               style={{
                 fontStyle: "italic",
@@ -109,12 +108,7 @@ export function Hero() {
             </span>
             <br />
             <span style={{ color: "var(--coral-500)" }}>sim </span>
-            <span
-              style={{
-                fontStyle: "italic",
-                color: "var(--teal-600)",
-              }}
-            >
+            <span style={{ fontStyle: "italic", color: "var(--teal-700)" }}>
               senhor
             </span>
           </h1>
