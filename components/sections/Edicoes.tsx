@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { EDICAO_URL } from "@/lib/config";
 
 const EDITIONS = [
@@ -194,7 +195,7 @@ export function Edicoes() {
 
         {/* View all CTA */}
         <div style={{ marginTop: 32, textAlign: "center" }}>
-          <button className="btn btn-outline">Ver todas as 10 edições anteriores</button>
+          <Link href="/edicoes" className="btn btn-outline">Ver todas as edições anteriores</Link>
         </div>
       </div>
 
