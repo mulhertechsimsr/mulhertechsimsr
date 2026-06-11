@@ -1,14 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Wordmark } from "@/components/Logo";
-import { API_URL } from "@/lib/config";
 import { setAuth } from "@/lib/auth";
-import type { Member } from "@/lib/auth";
 
-export default function LoginPage() {
+function LoginContent() {
   const router = useRouter();
   const params = useSearchParams();
   const redirect = params.get("redirect") ?? "/membro";
@@ -270,5 +268,13 @@ export default function LoginPage() {
         }
       `}</style>
     </>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense>
+      <LoginContent />
+    </Suspense>
   );
 }
