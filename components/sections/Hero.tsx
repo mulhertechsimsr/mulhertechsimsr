@@ -101,7 +101,7 @@ export function Hero() {
                 color: "var(--teal-600)",
                 textDecoration: "underline",
                 textDecorationStyle: "wavy",
-                textDecorationColor: "var(--pink-500)",
+                textDecorationColor: "var(--teal-400)",
                 textUnderlineOffset: 12,
               }}
             >

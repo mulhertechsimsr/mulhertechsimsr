@@ -18,7 +18,7 @@ const PILLARS = [
   {
     pill: "03 · CELEBRAÇÃO",
     icon: "✦",
-    color: "var(--pink-500)",
+    color: "var(--teal-500)",
     title: "O evento anual: Mulher Tech Sim Senhor",
     desc: "Nosso evento mais imponente, que em 2026 chega à 11ª edição. A cada ano um tema diferente, um universo visual próprio, e um único objetivo: celebrar quem somos.",
   },

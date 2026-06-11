@@ -3,10 +3,10 @@
 /* ===== MULHER TECH SIM SENHOR — Design Tokens ===== */
 
 @theme inline {
-  /* Brand colors */
-  --color-coral-500: #F0844A;
-  --color-coral-400: #F4A06D;
-  --color-coral-300: #F8C29A;
+  /* Brand colors — coral remapped to pink as secondary accent */
+  --color-coral-500: #E2487A;
+  --color-coral-400: #EB6E96;
+  --color-coral-300: #F5C0D0;
 
   --color-teal-700: #0D5C57;
   --color-teal-600: #0F7570;
@@ -33,9 +33,10 @@
 
 /* CSS custom properties — accessible in inline styles & arbitrary Tailwind values */
 :root {
-  --coral-500: #F0844A;
-  --coral-400: #F4A06D;
-  --coral-300: #F8C29A;
+  /* coral remapped to pink as secondary accent */
+  --coral-500: #E2487A;
+  --coral-400: #EB6E96;
+  --coral-300: #F5C0D0;
 
   --teal-700: #0D5C57;
   --teal-600: #0F7570;
