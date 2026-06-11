@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { EDICAO_URL } from "@/lib/config";
 
 const ALL_EDITIONS = [
-  { n: "11ª", year: "2026", theme: "Dados",          color: "#F0844A", current: true  },
+  { n: "11ª", year: "2026", theme: "Dados",          color: "var(--orange-500)", current: true  },
   { n: "10ª", year: "2025", theme: "Caminhos",       color: "var(--teal-600)"          },
   { n: "9ª",  year: "2024", theme: "Ecossistemas",   color: "var(--pink-500)"          },
   { n: "8ª",  year: "2023", theme: "Construir Junto",color: "#4A2E8E"                  },
@@ -95,7 +95,7 @@ export default function EdicoesPage() {
                   style={{
                     background: "white",
                     borderRadius: 20,
-                    border: e.current ? "2px solid #F0844A" : "1px solid var(--cream-200)",
+                    border: e.current ? "2px solid var(--orange-500)" : "1px solid var(--cream-200)",
                     overflow: "hidden",
                     display: "block",
                     textDecoration: "none",
@@ -144,7 +144,7 @@ export default function EdicoesPage() {
                           padding: "5px 12px",
                           borderRadius: 999,
                           background: "white",
-                          color: "#F0844A",
+                          color: "var(--orange-500)",
                           fontSize: 11,
                           fontWeight: 700,
                           letterSpacing: "0.06em",
@@ -156,7 +156,7 @@ export default function EdicoesPage() {
                             width: 6,
                             height: 6,
                             borderRadius: "50%",
-                            background: "#F0844A",
+                            background: "var(--orange-500)",
                             flexShrink: 0,
                           }}
                         />
@@ -185,7 +185,7 @@ export default function EdicoesPage() {
                         style={{
                           fontSize: 20,
                           fontWeight: 700,
-                          color: e.current ? "#F0844A" : "var(--ink-900)",
+                          color: e.current ? "var(--orange-500)" : "var(--ink-900)",
                         }}
                       >
                         {e.theme}

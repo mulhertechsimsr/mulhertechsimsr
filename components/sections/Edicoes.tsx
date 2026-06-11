@@ -77,7 +77,7 @@ export function Edicoes() {
                 style={{
                   background: "white",
                   borderRadius: 20,
-                  border: e.current ? "2px solid #F0844A" : "1px solid var(--cream-200)",
+                  border: e.current ? "2px solid var(--orange-500)" : "1px solid var(--cream-200)",
                   overflow: "hidden",
                   cursor: e.current ? "pointer" : "default",
                   display: "block",
@@ -182,7 +182,7 @@ export function Edicoes() {
                     >
                       {e.year} · TEMA
                     </div>
-                    <div style={{ fontSize: 22, fontWeight: 700, color: e.current ? "#F0844A" : "var(--ink-900)" }}>
+                    <div style={{ fontSize: 22, fontWeight: 700, color: e.current ? "var(--orange-500)" : "var(--ink-900)" }}>
                       {e.theme}
                     </div>
                   </div>
