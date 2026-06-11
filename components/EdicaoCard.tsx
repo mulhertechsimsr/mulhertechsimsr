@@ -119,17 +119,19 @@ export function EdicaoCard({
       >
         <div>
           <div className="eyebrow" style={{ color: "var(--ink-500)", marginBottom: 6 }}>
-            {e.year} · TEMA
+            {e.theme ? `${e.year}` : e.year}
           </div>
-          <div
-            style={{
-              fontSize: 22,
-              fontWeight: 700,
-              color: e.current ? "var(--orange-500)" : "var(--ink-900)",
-            }}
-          >
-            {e.theme}
-          </div>
+          {e.theme && (
+            <div
+              style={{
+                fontSize: 22,
+                fontWeight: 700,
+                color: e.current ? "var(--orange-500)" : "var(--ink-900)",
+              }}
+            >
+              {e.theme}
+            </div>
+          )}
         </div>
         {e.current && <div style={{ fontSize: 22, color: "var(--ink-300)" }}>→</div>}
       </div>
