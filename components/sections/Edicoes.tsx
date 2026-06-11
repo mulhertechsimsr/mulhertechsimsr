@@ -178,7 +178,7 @@ export function Edicoes() {
                       {e.theme}
                     </div>
                   </div>
-                  <div style={{ fontSize: 22, color: "var(--ink-300)" }}>→</div>
+                  {e.current && <div style={{ fontSize: 22, color: "var(--ink-300)" }}>→</div>}
                 </div>
               </CardWrapper>
             );
