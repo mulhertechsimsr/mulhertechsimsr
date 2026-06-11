@@ -4,19 +4,38 @@ export type Member = {
   apelido: string;
   email: string;
   whatsapp?: string;
+  cpf?: string;
+  dataNascimento?: string;
   cidade?: string;
+  estado?: string;
   faixaEtaria?: string;
+  // diversidade
+  racaCor?: string;
+  identidadeGenero?: string;
+  pcd?: string;
+  // formação
+  escolaridade?: string;
+  areaFormacao?: string;
+  // carreira
   momento?: string;
+  anosExperiencia?: string;
   area?: string;
+  areaAtuacao?: string;
+  // situação profissional
+  situacaoProfissional?: string;
   empresa?: string;
+  modalidade?: string;
+  faixaSalarial?: string;
+  // comunidade
   redes?: string;
   comoConheceu?: string;
+  participouEdicao?: string;
+  mentoria?: string;
   expectativas?: string;
+  // sistema
   anoIngresso: string;
   numeroCarteirinha?: string;
   foto?: string;
-  cpf?: string;
-  dataNascimento?: string;
 };
 
 export type AuthState = {
