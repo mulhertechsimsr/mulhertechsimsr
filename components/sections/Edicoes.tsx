@@ -181,7 +181,7 @@ export function Edicoes() {
                     >
                       {e.year} · TEMA
                     </div>
-                    <div style={{ fontSize: 22, fontWeight: 700, color: "var(--ink-900)" }}>
+                    <div style={{ fontSize: 22, fontWeight: 700, color: e.current ? "#F0844A" : "var(--ink-900)" }}>
                       {e.theme}
                     </div>
                   </div>
