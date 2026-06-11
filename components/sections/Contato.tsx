@@ -4,7 +4,7 @@ import { useState, FormEvent } from "react";
 
 const CONTACT_INFO = [
   { label: "EMAIL", value: "mulhertechsimsr@gmail.com" },
-  { label: "INSTAGRAM", value: "@mulhertechsimsenhor" },
+  { label: "INSTAGRAM", value: "@mulhertechsimsr" },
   { label: "SEDE", value: "João Pessoa, PB" },
   { label: "PRÓXIMA EDIÇÃO", value: "11ª edição · 01 de agosto de 2026" },
 ];
@@ -14,13 +14,13 @@ function ContactRow({ label, value }: { label: string; value: string }) {
     <div
       style={{
         paddingBottom: 16,
-        borderBottom: "1px solid rgba(255,255,255,0.1)",
+        borderBottom: "1px solid var(--cream-200)",
       }}
     >
-      <div className="eyebrow" style={{ color: "var(--ink-300)", marginBottom: 6 }}>
+      <div className="eyebrow" style={{ color: "var(--ink-500)", marginBottom: 6 }}>
         {label}
       </div>
-      <div style={{ fontSize: 17, fontWeight: 600, color: "white" }}>{value}</div>
+      <div style={{ fontSize: 17, fontWeight: 600, color: "var(--ink-900)" }}>{value}</div>
     </div>
   );
 }
@@ -38,7 +38,7 @@ export function Contato() {
   return (
     <section
       id="contato"
-      style={{ background: "var(--teal-700)", color: "white", padding: "100px 0" }}
+      style={{ background: "var(--cream-100)", padding: "100px 0" }}
     >
       <div
         className="contato-grid"
@@ -61,7 +61,7 @@ export function Contato() {
             className="display"
             style={{
               fontSize: "clamp(36px, 5vw, 64px)",
-              color: "white",
+              color: "var(--ink-900)",
               marginBottom: 24,
             }}
           >
@@ -71,7 +71,7 @@ export function Contato() {
             style={{
               fontSize: 17,
               lineHeight: 1.6,
-              color: "rgba(255,255,255,0.65)",
+              color: "var(--ink-500)",
               marginBottom: 40,
               maxWidth: 480,
             }}
@@ -89,18 +89,18 @@ export function Contato() {
         {/* Right: contact form */}
         <div
           style={{
-            background: "rgba(255,255,255,0.04)",
-            border: "1px solid rgba(255,255,255,0.1)",
+            background: "white",
+            border: "1px solid var(--cream-200)",
             borderRadius: 24,
             padding: 36,
           }}
         >
-          <h3 style={{ fontSize: 22, fontWeight: 700, color: "white", marginBottom: 24 }}>
+          <h3 style={{ fontSize: 22, fontWeight: 700, color: "var(--ink-900)", marginBottom: 24 }}>
             Envie uma mensagem
           </h3>
           <form
             onSubmit={handleSubmit}
-            className="field-dark"
+            className=""
             style={{ display: "flex", flexDirection: "column", gap: 18 }}
           >
             <div className="field">
