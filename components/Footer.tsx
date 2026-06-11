@@ -69,6 +69,14 @@ const COLS = [
       { label: "Parcerias", href: "/#contato" },
     ],
   },
+  {
+    title: "Legal",
+    links: [
+      { label: "Código de Conduta", href: "/codigo-de-conduta" },
+      { label: "Política de Privacidade", href: "/politica-de-privacidade" },
+      { label: "Política de Cookies", href: "/politica-de-cookies" },
+    ],
+  },
 ];
 
 function FooterCol({ title, links }: { title: string; links: { label: string; href: string; external?: boolean }[] }) {

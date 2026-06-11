@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Manrope, JetBrains_Mono } from "next/font/google";
+import { CookieBanner } from "@/components/CookieBanner";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -40,7 +41,10 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${bricolage.variable} ${manrope.variable} ${jetbrains.variable}`}
     >
-      <body className="min-h-screen flex flex-col">{children}</body>
+      <body className="min-h-screen flex flex-col">
+        {children}
+        <CookieBanner />
+      </body>
     </html>
   );
 }

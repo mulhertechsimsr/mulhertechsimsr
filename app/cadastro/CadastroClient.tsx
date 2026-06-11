@@ -475,7 +475,7 @@ function Formulario({ onSuccess }: { onSuccess: (nome: string) => void }) {
                   <label htmlFor="mentoria">Disponibilidade para mentoria</label>
                   <select id="mentoria" value={form.mentoria} onChange={set("mentoria")}>
                     <option value="">Selecione...</option>
-                    <option>Quero ser mentee</option>
+                    <option>Quero ser mentorada</option>
                     <option>Quero ser mentora</option>
                     <option>Ambos</option>
                     <option>Por enquanto não</option>
@@ -505,9 +505,9 @@ function Formulario({ onSuccess }: { onSuccess: (nome: string) => void }) {
                 />
                 <span style={{ fontSize: 14, lineHeight: 1.5, color: "var(--ink-700)" }}>
                   Li e concordo com o{" "}
-                  <a href="#" style={{ color: "var(--coral-500)", textDecoration: "underline" }}>Código de Conduta</a>{" "}
+                  <a href="/codigo-de-conduta" target="_blank" style={{ color: "var(--coral-500)", textDecoration: "underline" }}>Código de Conduta</a>{" "}
                   da comunidade e autorizo o tratamento dos meus dados conforme a{" "}
-                  <a href="#" style={{ color: "var(--coral-500)", textDecoration: "underline" }}>Política de Privacidade</a>. *
+                  <a href="/politica-de-privacidade" target="_blank" style={{ color: "var(--coral-500)", textDecoration: "underline" }}>Política de Privacidade</a>. *
                 </span>
               </label>
             </div>
