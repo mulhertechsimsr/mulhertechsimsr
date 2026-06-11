@@ -4,9 +4,9 @@ import { useState, FormEvent } from "react";
 
 const CONTACT_INFO = [
   { label: "EMAIL", value: "mulhertechsimsr@gmail.com" },
-  { label: "SEDE", value: "João Pessoa, PB" },
   { label: "INSTAGRAM", value: "@mulhertechsimsenhor" },
-  { label: "O EVENTO", value: "11ª edição · 01 de agosto de 2026" },
+  { label: "SEDE", value: "João Pessoa, PB" },
+  { label: "PRÓXIMA EDIÇÃO", value: "11ª edição · 01 de agosto de 2026" },
 ];
 
 function ContactRow({ label, value }: { label: string; value: string }) {
@@ -38,7 +38,7 @@ export function Contato() {
   return (
     <section
       id="contato"
-      style={{ background: "var(--ink-900)", color: "white", padding: "100px 0" }}
+      style={{ background: "var(--teal-700)", color: "white", padding: "100px 0" }}
     >
       <div
         className="contato-grid"
