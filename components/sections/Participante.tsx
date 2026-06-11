@@ -3,7 +3,7 @@ import Link from "next/link";
 const STEPS = [
   {
     n: "01",
-    color: "var(--coral-500)",
+    color: "var(--orange-500)",
     title: "Preencha o cadastro",
     desc: "Conta um pouco sobre você, sua área e o que te trouxe até aqui. Leva 3 minutos.",
   },
@@ -15,7 +15,7 @@ const STEPS = [
   },
   {
     n: "03",
-    color: "var(--orange-500)",
+    color: "var(--coral-500)",
     title: "Participe das trocas",
     desc: "Conheça os grupos por área de interesse, mentorias, cursos e os encontros da comunidade.",
   },

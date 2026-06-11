@@ -44,8 +44,8 @@ export default function EdicoesPage() {
               Todas as edições
             </h1>
             <p style={{ fontSize: 18, color: "rgba(255,255,255,0.7)", maxWidth: 560 }}>
-              Desde 2016, cada encontro tem tema, identidade visual e programação próprios.
-              O que permanece é o porquê de estarmos juntas.
+              Desde 2022, cada encontro tem tema, identidade visual e programação próprios.
+              Tudo muda. O que permanece é o porquê de estarmos juntas.
             </p>
           </div>
         </div>

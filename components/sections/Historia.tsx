@@ -10,7 +10,7 @@ const MILESTONES = [
   {
     year: "2020",
     title: "Pandemia e expansão digital",
-    desc: "Com a pandemia de Covid-19, o evento migrou para o digital — e a comunidade não parou. Mais de mil mulheres seguiram conectadas por trocas, mentorias e cursos ao longo do ano.",
+    desc: "Com a pandemia de Covid-19, precisamos fazer uma edição digital — e a comunidade não parou. Crescemos e nos adaptamos.",
   },
   {
     year: "2025",

@@ -78,7 +78,7 @@ export function Hero() {
               }}
             />
             <span style={{ fontSize: 13, fontWeight: 600, color: "var(--ink-700)" }}>
-              +1.000 mulheres na tech, juntas em João Pessoa
+              +1.000 mulheres de tech, juntas em João Pessoa
             </span>
           </div>
 
@@ -95,21 +95,15 @@ export function Hero() {
             <span
               style={{
                 fontStyle: "italic",
-                color: "var(--teal-600)",
-                display: "inline-block",
-                paddingBottom: "0.08em",
-                textDecoration: "underline",
-                textDecorationStyle: "wavy",
-                textDecorationColor: "var(--teal-400)",
-                textUnderlineOffset: "0.18em",
+                color: "var(--coral-500)",
               }}
             >
               Tech
             </span>
             <br />
-            <span style={{ color: "var(--coral-500)" }}>sim </span>
-            <span style={{ fontStyle: "italic", color: "var(--teal-700)" }}>
-              senhor
+            <span style={{ color: "var(--coral-500)" }}>Sim </span>
+            <span style={{ color: "var(--teal-700)" }}>
+              Senhor
             </span>
           </h1>
 
@@ -137,8 +131,8 @@ export function Hero() {
               Conhecer a 11ª edição
               <span aria-hidden>→</span>
             </a>
-            <Link href="/#membra" className="btn btn-outline">
-              Como virar membra
+            <Link href="/#participante" className="btn btn-outline">
+              Como virar participante
             </Link>
           </div>
         </div>
@@ -182,7 +176,7 @@ export function Hero() {
                 width: 36,
                 height: 36,
                 borderRadius: 10,
-                background: "var(--coral-500)",
+                background: "var(--orange-500)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -230,7 +224,7 @@ export function Hero() {
             }}
           >
             <div style={{ display: "flex" }}>
-              {(["var(--coral-500)", "var(--teal-500)", "var(--pink-500)"] as const).map(
+              {(["var(--orange-500)", "var(--teal-500)", "var(--pink-500)"] as const).map(
                 (c, i) => (
                   <div
                     key={i}

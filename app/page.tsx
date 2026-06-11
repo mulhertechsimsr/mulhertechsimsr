@@ -6,7 +6,7 @@ import { Sobre } from "@/components/sections/Sobre";
 import { Historia } from "@/components/sections/Historia";
 import { Edicoes } from "@/components/sections/Edicoes";
 import { Equipe } from "@/components/sections/Equipe";
-import { Membra } from "@/components/sections/Membra";
+import { Participante } from "@/components/sections/Participante";
 import { Contato } from "@/components/sections/Contato";
 
 export default function HomePage() {
@@ -20,7 +20,7 @@ export default function HomePage() {
         <Historia />
         <Edicoes />
         <Equipe />
-        <Membra />
+        <Participante />
         <Contato />
       </main>
       <Footer />

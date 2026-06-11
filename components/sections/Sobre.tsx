@@ -4,7 +4,7 @@ const PILLARS = [
   {
     pill: "01 · CONEXÃO",
     icon: "◉",
-    color: "var(--coral-500)",
+    color: "var(--orange-500)",
     title: "Onde mulheres de tech se encontram",
     desc: "Promovemos a interação entre mulheres da área criando espaços seguros de troca — porque carreira em tecnologia se faz em rede, e nenhuma rede se sustenta sozinha.",
   },
@@ -18,7 +18,7 @@ const PILLARS = [
   {
     pill: "03 · CELEBRAÇÃO",
     icon: "✦",
-    color: "var(--teal-500)",
+    color: "var(--coral-500)",
     title: "O evento anual: Mulher Tech Sim Senhor",
     desc: "Nosso evento mais imponente, que em 2026 chega à 11ª edição. A cada ano um tema diferente, um universo visual próprio, e um único objetivo: celebrar quem somos.",
   },

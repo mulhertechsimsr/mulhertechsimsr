@@ -260,7 +260,7 @@ function Formulario({ onSubmit }: { onSubmit: () => void }) {
             marginBottom: 20,
           }}
         >
-          Cadastro de membra
+          Cadastro de participante
         </h1>
         <p style={{ fontSize: 18, lineHeight: 1.55, color: "var(--ink-700)" }}>
           A entrada é <strong>gratuita</strong> e aberta a qualquer mulher que atue, estude
@@ -507,7 +507,7 @@ function Formulario({ onSubmit }: { onSubmit: () => void }) {
               flexWrap: "wrap",
             }}
           >
-            <Link href="/#membra" className="btn btn-ghost">
+            <Link href="/#participante" className="btn btn-ghost">
               <span aria-hidden>←</span> Voltar
             </Link>
             <button

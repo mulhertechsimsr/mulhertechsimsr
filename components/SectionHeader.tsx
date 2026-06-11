@@ -48,7 +48,7 @@ export function SectionHeader({
             fontSize: 18,
             lineHeight: 1.5,
             color: dark ? "rgba(255,255,255,0.7)" : "var(--ink-500)",
-            maxWidth: 640,
+            maxWidth: 650,
             marginLeft: align === "center" ? "auto" : 0,
             marginRight: align === "center" ? "auto" : 0,
           }}

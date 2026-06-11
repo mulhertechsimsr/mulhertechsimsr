@@ -26,7 +26,7 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Mulher Tech Sim Senhor — Associação",
   description:
-    "Associação sem fins lucrativos sediada em João Pessoa (PB), dedicada a conectar, formar e celebrar mulheres na tecnologia. +1.000 membras.",
+    "Associação sem fins lucrativos sediada em João Pessoa (PB), dedicada a conectar, formar e celebrar mulheres de tecnologia. +1.000 mulheres.",
   icons: { icon: "/logo-mtss.png" },
 };
 

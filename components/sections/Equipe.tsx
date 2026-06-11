@@ -10,7 +10,7 @@ const TEAM = [
   { role: "Presidência",      name: "Vanessa Dantas",    photo: "/equipe/vanessa_dantas.png",    highlight: false },
   { role: "Vice-Presidência", name: "Nicoly Almeida",    photo: "/equipe/nicoly_almeida.png",    highlight: false },
   { role: "1ª Secretaria",    name: "Cleonice Celestino",photo: "/equipe/cleo_celestino.png",    highlight: false },
-  { role: "2ª Secretaria",    name: "Laryssa Farias",    photo: "/equipe/laryssa_farias.png",    highlight: false },
+  { role: "2ª Secretaria",    name: "Laryssa Alencar",    photo: "/equipe/laryssa_farias.png",    highlight: false },
   { role: "Tesouraria",       name: "Mariana Linhares",  photo: "/equipe/mariana_linhares.png",  highlight: false },
   { role: "Diretoria",        name: "Julyana Alencar",   photo: "/equipe/julyana_alencar.png",   highlight: false },
   { role: "Diretoria",        name: "Sáskya Gurgel",     photo: "/equipe/saskya_gurgel.png",     highlight: false },

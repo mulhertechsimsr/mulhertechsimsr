@@ -119,7 +119,7 @@ export function EdicaoCard({
       >
         <div>
           <div className="eyebrow" style={{ color: "var(--ink-500)", marginBottom: 6 }}>
-            {e.theme ? `${e.year}` : e.year}
+            {e.theme ? `${e.year} · TEMA` : e.year}
           </div>
           {e.theme && (
             <div
