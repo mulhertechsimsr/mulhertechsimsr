@@ -105,8 +105,7 @@ export function Participante() {
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
             {STEPS.map((s, i) => (
               <div key={i} style={{
-                background: "white", borderRadius: 20,
-                border: "1px solid var(--cream-200)", padding: 28,
+                background: "white", borderRadius: 20, padding: 28,
                 display: "flex", gap: 24, alignItems: "flex-start",
               }}>
                 <div className="display" style={{ fontSize: 44, color: s.color, lineHeight: 1, flexShrink: 0 }}>
@@ -124,6 +123,9 @@ export function Participante() {
         </div>
 
         {/* Bottom: benefit cards */}
+        <div className="eyebrow" style={{ color: "var(--coral-500)", marginBottom: 16 }}>
+              VANTAGENS EM SER ASSOCIADA
+            </div>
         <div
           className="vantagens-grid"
           style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}
