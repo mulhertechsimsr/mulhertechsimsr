@@ -133,10 +133,11 @@ export function Footer() {
       >
         {/* Grid */}
         <div
+          className="footer-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "2fr 1fr 1fr 1fr 1fr",
-            gap: 48,
+            gap: 40,
             marginBottom: 64,
           }}
         >
@@ -205,12 +206,14 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Mobile footer grid override */}
       <style>{`
-        @media (max-width: 900px) {
-          .footer-grid { grid-template-columns: 1fr 1fr !important; }
+        @media (max-width: 1100px) {
+          .footer-grid { grid-template-columns: 1fr 1fr 1fr !important; }
         }
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
+          .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+        }
+        @media (max-width: 480px) {
           .footer-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
