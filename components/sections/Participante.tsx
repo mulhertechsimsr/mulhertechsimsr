@@ -78,49 +78,52 @@ export function Participante() {
     <section id="participante" style={{ padding: "100px 0", background: "var(--cream-50)" }}>
       <div style={{ maxWidth: 1240, margin: "0 auto", padding: "0 32px" }}>
 
-        {/* Headline centralizado */}
-        <div style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 64px" }}>
-          <div className="eyebrow" style={{ color: "var(--coral-500)", marginBottom: 16 }}>
-            COMO PARTICIPAR
-          </div>
-          <h2 className="display" style={{ fontSize: "clamp(36px, 5vw, 56px)", color: "var(--ink-900)", marginBottom: 20 }}>
-            Quer fazer parte?
-          </h2>
-          <p style={{ fontSize: 17, lineHeight: 1.6, color: "var(--ink-700)", marginBottom: 32 }}>
-            A entrada é gratuita e aberta a qualquer mulher que atue, estude ou esteja em
-            transição para tecnologia. Pedimos apenas alinhamento com nossos valores e
-            disposição para trocar.
-          </p>
-          <Link href="/cadastro" className="btn btn-coral">
-            Fazer meu cadastro <span aria-hidden>→</span>
-          </Link>
-        </div>
-
-        {/* Steps em 3 colunas */}
+        {/* Top: copy + steps */}
         <div
-          className="steps-grid"
-          style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginBottom: 16 }}
+          className="participante-grid"
+          style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 80, alignItems: "center", marginBottom: 56 }}
         >
-          {STEPS.map((s, i) => (
-            <div key={i} style={{
-              background: "white", borderRadius: 20,
-              border: "1px solid var(--cream-200)", padding: 28,
-              display: "flex", gap: 20, alignItems: "flex-start",
-            }}>
-              <div className="display" style={{ fontSize: 44, color: s.color, lineHeight: 1, flexShrink: 0 }}>
-                {s.n}
-              </div>
-              <div>
-                <h3 style={{ fontSize: 18, fontWeight: 700, color: "var(--ink-900)", marginBottom: 6 }}>
-                  {s.title}
-                </h3>
-                <p style={{ fontSize: 14, lineHeight: 1.5, color: "var(--ink-500)" }}>{s.desc}</p>
-              </div>
+          {/* Left: copy */}
+          <div>
+            <div className="eyebrow" style={{ color: "var(--coral-500)", marginBottom: 16 }}>
+              COMO PARTICIPAR
             </div>
-          ))}
+            <h2 className="display" style={{ fontSize: "clamp(36px, 5vw, 56px)", color: "var(--ink-900)", marginBottom: 24 }}>
+              Quer fazer parte?
+            </h2>
+            <p style={{ fontSize: 17, lineHeight: 1.6, color: "var(--ink-700)", marginBottom: 32 }}>
+              A entrada é gratuita e aberta a qualquer mulher que atue, estude ou esteja em
+              transição para tecnologia. Pedimos apenas alinhamento com nossos valores e
+              disposição para trocar.
+            </p>
+            <Link href="/cadastro" className="btn btn-coral">
+              Fazer meu cadastro <span aria-hidden>→</span>
+            </Link>
+          </div>
+
+          {/* Right: steps */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            {STEPS.map((s, i) => (
+              <div key={i} style={{
+                background: "white", borderRadius: 20,
+                border: "1px solid var(--cream-200)", padding: 28,
+                display: "flex", gap: 24, alignItems: "flex-start",
+              }}>
+                <div className="display" style={{ fontSize: 44, color: s.color, lineHeight: 1, flexShrink: 0 }}>
+                  {s.n}
+                </div>
+                <div>
+                  <h3 style={{ fontSize: 20, fontWeight: 700, color: "var(--ink-900)", marginBottom: 6 }}>
+                    {s.title}
+                  </h3>
+                  <p style={{ fontSize: 15, lineHeight: 1.5, color: "var(--ink-500)" }}>{s.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Vantagens em 4 colunas */}
+        {/* Bottom: benefit cards */}
         <div
           className="vantagens-grid"
           style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}
@@ -149,11 +152,11 @@ export function Participante() {
       </div>
 
       <style>{`
-        @media (max-width: 860px) {
-          .steps-grid { grid-template-columns: 1fr !important; }
+        @media (max-width: 900px) {
+          .participante-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
           .vantagens-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
-        @media (max-width: 480px) {
+        @media (max-width: 560px) {
           .vantagens-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
