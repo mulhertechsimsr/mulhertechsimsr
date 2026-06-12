@@ -6,6 +6,7 @@ import { Sobre } from "@/components/sections/Sobre";
 import { Historia } from "@/components/sections/Historia";
 import { Edicoes } from "@/components/sections/Edicoes";
 import { Equipe } from "@/components/sections/Equipe";
+import { Vantagens } from "@/components/sections/Vantagens";
 import { Participante } from "@/components/sections/Participante";
 import { Contato } from "@/components/sections/Contato";
 
@@ -20,6 +21,7 @@ export default function HomePage() {
         <Historia />
         <Edicoes />
         <Equipe />
+        <Vantagens />
         <Participante />
         <Contato />
       </main>
